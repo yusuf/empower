@@ -1,0 +1,23 @@
+{
+    "name": "sorora/empower",
+    "description": "",
+    "authors": [
+        {
+            "name": "David Bowen",
+            "email": "david@lifeofabowen.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Sorora\\Empower": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
