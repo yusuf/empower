@@ -5,6 +5,14 @@ class Empower {
     {
         return $this->$type($route, $extra);
     }
+    public function buttonDestroy($route, $extra)
+    {
+        $button = $this->form('destroy', $route, $extra);
+        $button .= \Form::submit('Delete');
+        $button .= \Form::close();
+
+        return $button;
+    }
     private function store($route, $extra)
     {
         return \Form::open(
@@ -22,6 +30,18 @@ class Empower {
                     $route.'.store',
                     $extra['model']->id
                 )
+            )
+        );
+    }
+    private function destroy($route, $params)
+    {
+        return \Form::open(
+            array(
+                'route' => array(
+                    $route.'.destroy',
+                    $params
+                ),
+                'method' => 'DELETE'
             )
         );
     }
