@@ -7,9 +7,8 @@ class EmpowerController extends \BaseController {
 
     public function __construct()
     {
-        $this->baseurl = \Config::get('empower::baseurl').'.';
         $this->data = array(
-            'baseurl' => \Config::get('empower::baseurl').'.'
+            'baseurl' => $this->baseurl = \Config::get('empower::baseurl').'.'
         );
     }
 }
