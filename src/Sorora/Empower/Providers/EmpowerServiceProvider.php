@@ -33,7 +33,11 @@ class EmpowerServiceProvider extends ServiceProvider {
 		{
 			return new \Sorora\Empower\Empower;
 		});
+		// Register package alias
+		$this->app['config']->set('app.aliases', array_merge($this->app['config']->get('app.aliases'), array('Empower' => 'Sorora\Empower\Facades\Empower')));
+		// Register package configuration location
 		$this->app['config']->package('sorora/empower', __DIR__.'/../../../config');
+		// Register package view location
    		$this->app['view']->addNamespace('empower', __DIR__.'/../../../views');
 	}
 
