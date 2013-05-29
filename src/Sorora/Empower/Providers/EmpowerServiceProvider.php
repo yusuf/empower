@@ -19,6 +19,8 @@ class EmpowerServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('sorora/empower');
+
+		include __DIR__.'/../../../routes.php';
 	}
 
 	/**
