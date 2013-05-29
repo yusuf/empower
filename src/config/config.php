@@ -26,4 +26,15 @@ return array(
     */
     'layout' => 'empower::layouts.master'
 
+    /*
+    |--------------------------------------------------------------------------
+    | Section content goes into
+    |--------------------------------------------------------------------------
+    |
+    | This is the @section the forms/views will be placed into in the layout
+    | defined by this config's "layout"
+    |
+    */
+    'section' => 'body'
+
 );
