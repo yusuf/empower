@@ -1,11 +1,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{{ isset($title) ? $title : null }}</title>
+    <title>{{{ isset($title) ? $title : null }}}</title>
 </head>
 <body>
 
-    <h1>{{ isset($title) ? $title : null }}</h1>
+    <h1>{{{ isset($title) ? $title : null }}}</h1>
 
     @if (Session::has('success'))
         <h2>Success</h2>
