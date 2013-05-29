@@ -27,9 +27,10 @@ class Empower {
             $extra['model'],
             array(
                 'route' => array(
-                    $route.'.store',
+                    $route.'.update',
                     $extra['model']->id
-                )
+                ),
+                'method' => 'PUT'
             )
         );
     }
