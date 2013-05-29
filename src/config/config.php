@@ -24,7 +24,7 @@ return array(
     | whatever layout you wish them to be a child of.
     |
     */
-    'layout' => 'empower::layouts.master'
+    'layout' => 'empower::layouts.master',
 
     /*
     |--------------------------------------------------------------------------
