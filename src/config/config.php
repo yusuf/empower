@@ -14,6 +14,25 @@ return array(
 
     /*
     |--------------------------------------------------------------------------
+    | External packages
+    |--------------------------------------------------------------------------
+    |
+    | This is a list of external packages. It is required so they can be
+    | included into the navigation in the main control area view.
+    | Keys represent the package and the value represents the view location.
+    | To add your own items to the list, add a value without a key
+    | Example:
+    | array(
+    |   'packageName' => 'viewNavigation',
+    |   'aurp' => 'layouts.nav',
+    |   'customNav'
+    | )
+    |
+    */
+    'externals' => array(),
+
+    /*
+    |--------------------------------------------------------------------------
     | Parent layout for views
     |--------------------------------------------------------------------------
     |
