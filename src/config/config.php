@@ -10,7 +10,7 @@ return array(
     | have something like "admin", then simply change this.
     |
     */
-    'base_url' => 'sorora/',
+    'baseurl' => 'sorora',
 
     /*
     |--------------------------------------------------------------------------
