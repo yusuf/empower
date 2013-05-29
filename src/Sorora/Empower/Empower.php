@@ -1,7 +1,6 @@
 <?php namespace Sorora\Empower;
 
-class Empower
-{
+class Empower {
     public function form($type, $route, $extra = array())
     {
         return $this->$type($route, $extra);
