@@ -4,6 +4,8 @@ class SupportModel extends \Eloquent {
     
     public $errors;
 
+    public static $rules;
+
     protected static $dbprefix;
 
     /**
