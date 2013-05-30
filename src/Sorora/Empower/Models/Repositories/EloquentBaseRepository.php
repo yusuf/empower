@@ -30,6 +30,11 @@ abstract class EloquentBaseRepository {
         return $this->model->findOrFail($id);
     }
 
+    public function lists($value, $key = null)
+    {
+        return $this->model->lists($value, $key);
+    }
+
     public function exists()
     {
         return $this->model->exists();
@@ -68,6 +73,11 @@ abstract class EloquentBaseRepository {
     public function uniqueExcept($fields)
     {
         return $this->model->uniqueExcept($fields);
+    }
+
+    public function getDbPrefix()
+    {
+        return $this->model->getDbPrefix();
     }
 
 }
