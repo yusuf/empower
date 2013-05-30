@@ -1,10 +1,20 @@
 <?php namespace Sorora\Empower;
 
 class Empower {
+    /**
+     * Generic Form creator for ease of creating different forms
+     *
+     * @return string
+     */
     public function form($type, $route, $extra = array())
     {
         return $this->$type($route, $extra);
     }
+    /**
+     * Button generator for buttons used for @destroy actions
+     *
+     * @return string
+     */
     public function buttonDestroy($route, $extra)
     {
         $button = $this->form('destroy', $route, $extra);
@@ -13,6 +23,11 @@ class Empower {
 
         return $button;
     }
+    /**
+     * Creates a normal form (for @create resources)
+     *
+     * @return string
+     */
     private function store($route, $extra)
     {
         return \Form::open(
@@ -21,6 +36,11 @@ class Empower {
             )
         );
     }
+    /**
+     * Creates a PUT form (for @update resources)
+     *
+     * @return string
+     */
     private function update($route, $extra)
     {
         return \Form::model(
@@ -34,6 +54,11 @@ class Empower {
             )
         );
     }
+    /**
+     * Creates a DESTROY form (for @destroy resources)
+     *
+     * @return string
+     */
     private function destroy($route, $params)
     {
         return \Form::open(

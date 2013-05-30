@@ -6,6 +6,9 @@ class SupportModel extends \Eloquent {
 
     protected static $dbprefix;
 
+    /**
+     * Prefixes any tables that need it
+     */
     public function __construct(array $attributes = array())
     {
         parent::__construct($attributes);
@@ -15,6 +18,11 @@ class SupportModel extends \Eloquent {
         $this->table = static::$dbprefix.$this->table;
     }
 
+    /**
+     * Prefixes any tables that need it
+     *
+     * @return bool
+     */
     public static function boot()
     {
         parent::boot();
@@ -25,6 +33,11 @@ class SupportModel extends \Eloquent {
         });
     }
 
+    /**
+     * Validates input based on the rules set on the method
+     *
+     * @return bool
+     */
     public function validate()
     {
         $validation = \Validator::make($this->attributes, static::$rules);
