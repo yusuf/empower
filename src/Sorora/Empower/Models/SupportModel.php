@@ -51,4 +51,19 @@ class SupportModel extends \Eloquent {
 
         return false;
     }
+
+    /**
+     * Changes the $rules to ignore certain IDs on unique.
+     * These MUST be the last in the rules list
+     *
+     * @return bool
+     */
+    public function uniqueExcept($fields)
+    {
+        $fields = (is_array($fields)) ?: array($fields);
+        foreach($fields AS $field)
+        {
+            static::$rules[$field] .= ','.$this->id;
+        }
+    }
 }
