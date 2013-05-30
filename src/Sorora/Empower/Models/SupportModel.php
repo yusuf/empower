@@ -68,4 +68,14 @@ class SupportModel extends \Eloquent {
             static::$rules[$field] .= ','.$this->id;
         }
     }
+
+    /**
+     * Returns the database prefix
+     *
+     * @return bool
+     */
+    public static function getDbPrefix()
+    {
+        return static::$dbprefix;
+    }
 }
