@@ -4,6 +4,17 @@ class SupportModel extends \Eloquent {
     
     public $errors;
 
+    protected static $dbprefix;
+
+    public function __construct(array $attributes = array())
+    {
+        parent::__construct($attributes);
+
+        static::$dbprefix = \Config::get('empower::dbprefix');
+
+        $this->table = static::$dbprefix.$this->table;
+    }
+
     public static function boot()
     {
         parent::boot();
