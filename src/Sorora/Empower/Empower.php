@@ -2,12 +2,49 @@
 
 class Empower {
     /**
+     * Helper function to access form('store', '')
+     *
+     * @return string
+     */
+    public function store($route, $view, $extra = array())
+    {
+        return $this->form('store', $route, $view, $extra);
+    }
+    /**
+     * Helper function to access form('update', '')
+     *
+     * @return string
+     */
+    public function update($route, $view, $extra = array())
+    {
+        return $this->form('update', $route, $view, $extra);
+    }
+    /**
+     * Generic Form creator for ease of creating different forms
+     * For data from the main view to be passed here, we must
+     * View::share the data from the controller
+     * 
+     * @return string
+     */
+    public function form($type, $route, $view, $extra = array())
+    {
+        $data = array(
+            'form_type' => $type,
+            'form_route' => $route,
+            'form_view' => $view,
+            'form_submit' => ($type == 'store') ? 'Create' : 'Edit',
+            'form_extra' => $extra
+        );
+        return \View::make('empower::layouts.form', $data);
+    }
+    /**
      * Generic Form creator for ease of creating different forms
      *
      * @return string
      */
-    public function form($type, $route, $extra = array())
+    public function open($type, $route, $extra = array())
     {
+        $type .= 'Form';
         return $this->$type($route, $extra);
     }
     /**
@@ -17,7 +54,7 @@ class Empower {
      */
     public function buttonDestroy($route, $extra)
     {
-        $button = $this->form('destroy', $route, $extra);
+        $button = $this->open('destroy', $route, $extra);
         $button .= \Form::submit('Delete');
         $button .= \Form::close();
 
@@ -28,7 +65,7 @@ class Empower {
      *
      * @return string
      */
-    private function store($route, $extra)
+    private function storeForm($route, $extra)
     {
         return \Form::open(
             array(
@@ -41,7 +78,7 @@ class Empower {
      *
      * @return string
      */
-    private function update($route, $extra)
+    private function updateForm($route, $extra)
     {
         return \Form::model(
             $extra['model'],
@@ -59,7 +96,7 @@ class Empower {
      *
      * @return string
      */
-    private function destroy($route, $params)
+    private function destroyForm($route, $params)
     {
         return \Form::open(
             array(
