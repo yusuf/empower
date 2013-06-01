@@ -21,12 +21,17 @@
 
     <nav>
         <ul>
-        @section('empower-nav')
-            <li>{{ HTML::linkRoute(Config::get('empower::baseurl'), 'Main Panel') }}</li>
-            @foreach(Config::get('empower::externals') as $key => $view)
-                @include((($key) ? $key.'::' : null).$view)
-            @endforeach
-        @show
+        @if(Auth::check())
+            @section('empower-nav')
+                <li>{{ HTML::linkRoute(Config::get('empower::baseurl'), 'Main Panel') }}</li>
+                @foreach(Config::get('empower::externals') as $key => $view)
+                    @include((($key) ? $key.'::' : null).$view)
+                @endforeach
+                <li>{{ HTML::linkRoute('logout', 'Log out') }}</li>
+            @show
+        @else
+            <li>{{ HTML::linkRoute('login', 'Login') }}</li>
+        @endif
         </ul>
     </nav>
 
