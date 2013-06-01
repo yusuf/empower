@@ -21,7 +21,7 @@ class SupportModel extends \Eloquent {
     }
 
     /**
-     * Prefixes any tables that need it
+     * Validates on save
      *
      * @return bool
      */
@@ -29,9 +29,9 @@ class SupportModel extends \Eloquent {
     {
         parent::boot();
 
-        static::saving(function ($post)
+        static::saving(function ($item)
         {
-            return $post->validate();
+            return $item->validate();
         });
     }
 
