@@ -16,7 +16,12 @@ class SupportModel extends \Eloquent {
         parent::__construct($attributes);
 
         static::$dbprefix = \Config::get('empower::dbprefix');
-
+        // Change any unique:table_name or exists:table_name to prefixed table names
+        static::$rules = str_replace(
+                            array('exists:', 'unique:'),
+                            array('exists:'.static::$dbprefix, 'unique:'.static::$dbprefix),
+                            static::$rules
+                        );
         $this->table = static::$dbprefix.$this->table;
     }
 
