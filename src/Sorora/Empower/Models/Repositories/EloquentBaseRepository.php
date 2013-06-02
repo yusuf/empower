@@ -30,6 +30,11 @@ abstract class EloquentBaseRepository {
         return $this->model->findOrFail($id);
     }
 
+    public function orderBy($field, $order = null)
+    {
+        return $this->model->orderBy($field, $order);
+    }
+
     public function lists($value, $key = null)
     {
         return $this->model->lists($value, $key);
@@ -73,6 +78,11 @@ abstract class EloquentBaseRepository {
     public function uniqueExcept($fields)
     {
         return $this->model->uniqueExcept($fields);
+    }
+
+    public function slug($string)
+    {
+        return $this->model->slug($string);
     }
 
     public function getDbPrefix()

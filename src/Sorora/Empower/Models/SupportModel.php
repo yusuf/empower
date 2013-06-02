@@ -63,7 +63,7 @@ class SupportModel extends \Eloquent {
      * Changes the $rules to ignore certain IDs on unique.
      * These MUST be the last in the rules list
      *
-     * @return bool
+     * @return void
      */
     public function uniqueExcept($fields)
     {
@@ -75,9 +75,20 @@ class SupportModel extends \Eloquent {
     }
 
     /**
+     * Creates a slug from the provided string and strips out characters
+     * that are not good for URLs
+     *
+     * @return string
+     */
+    public function slug($string)
+    {
+        return strtolower(trim(preg_replace('~[^0-9a-z]+~i', '-', html_entity_decode(preg_replace('~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities($string, ENT_QUOTES, 'UTF-8')), ENT_QUOTES, 'UTF-8')), '-'));
+    }
+
+    /**
      * Returns the database prefix
      *
-     * @return bool
+     * @return string
      */
     public static function getDbPrefix()
     {
