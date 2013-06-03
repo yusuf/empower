@@ -64,7 +64,7 @@ To change the "index" view to a view of your choice, simply change it to be:
         )
     );
 
-Then ensure you have a view in the correct place, following this convention in the views folder: **packages**/**vendor**/**package**/**folder**/**file** ... In this case, it would be: packages/sorora/empower/core/index.blade.php
+Then ensure you have a view in the correct place, following this convention in the views folder: **packages/vendor/package/folder/file** ... In this case, it would be: packages/sorora/empower/core/index.blade.php
 
 It's as simple as that!
 
