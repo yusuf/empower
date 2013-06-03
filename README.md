@@ -1,7 +1,7 @@
 Empower
 =======
 
-** Please note this package is still in development, it may change a lot before mid-June, so please be patient. **
+**Please note this package is still in development, it may change a lot before mid-June, so please be patient.**
 
 This is needed for other packages made by myself to function fully, as it contains a lot of generic code that would be repeated otherwise.
 
