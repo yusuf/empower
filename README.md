@@ -17,6 +17,8 @@ You can install this package via composer by adding the below to your composer.j
 
 Once you have installed the package (by running composer update or composer install), you **should** publish the configuration to your main project, so future updates do not override your config.
 
+**Note:** You also need to add *'Sorora\Empower\Providers\EmpowerServiceProvider'* to your *app/config/config.php* file in the *providers* array
+
 ## Configuration Options
 
 ### "Admin" Panel
