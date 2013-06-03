@@ -72,4 +72,16 @@ class SupportModelTest extends TestCase {
 
         $this->assertEquals($original.','.$id, $model::$rules['email']);
     }
+
+    /**
+     * Does the validation set errors on validation failure
+     *
+     * @return void
+     */
+    public function testsStringToSlug()
+    {
+        $this->assertEquals('this-is-a-slug', $this->model->slug('This is a slug!!!!'));
+        $this->assertEquals('this-is-a-slug', $this->model->slug('!!!!This is a slug!!!!'));
+        $this->assertEquals('this-is-123-a-slug', $this->model->slug('!!!!This is 123 a slug!!!!'));
+    }
 }
