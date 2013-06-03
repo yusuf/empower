@@ -13,7 +13,7 @@ This package is not recommended for standalone use - it is used to store common 
 
 You can install this package via composer by adding the below to your composer.json file:
 
-    "sorora/empower" : "1.*"
+    "sorora/empower" : "dev-master"
 
 Once you have installed the package (by running composer update or composer install), you **should** publish the configuration to your main project, so future updates do not override your config.
 
