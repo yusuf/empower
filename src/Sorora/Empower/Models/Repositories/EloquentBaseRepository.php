@@ -90,11 +90,6 @@ abstract class EloquentBaseRepository {
         return $this->model->uniqueExcept($fields);
     }
 
-    public function slug($string)
-    {
-        return $this->model->slug($string);
-    }
-
     public function getDbPrefix()
     {
         return $this->model->getDbPrefix();
