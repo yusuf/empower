@@ -3,11 +3,11 @@ Empower
 
 **Please note this package is still in development, it may change before mid-June, so please be patient.**
 
+## What is it for?
+
 This is needed for other packages made by Sorora to function fully, as it contains a lot of generic code that would be repeated otherwise.
 
-## Usage
-
-This package is not recommended for standalone use - it is used to store common features among all other packages I'm creating for Laravel 4.
+This package is **not recommended for standalone use** - it is used to store common features among all other packages I'm creating for Laravel 4.
 
 ## Installation
 
