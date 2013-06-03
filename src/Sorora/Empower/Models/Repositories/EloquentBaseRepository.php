@@ -50,6 +50,11 @@ abstract class EloquentBaseRepository {
         return $this->model->exists();
     }
 
+    public function newQuery()
+    {
+        return $this->model->newQuery();
+    }
+
     public function create($input)
     {
         return $this->model->create($input);
