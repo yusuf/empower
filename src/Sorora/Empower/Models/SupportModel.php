@@ -63,6 +63,17 @@ class SupportModel extends \Eloquent {
      * Changes the $rules to ignore certain IDs on unique.
      * These MUST be the last in the rules list
      *
+     * @return obj|null
+     */
+    public function getFromField($field, $value)
+    {
+        return $this->where($field, $value)->firstOrFail();
+    }
+
+    /**
+     * Changes the $rules to ignore certain IDs on unique.
+     * These MUST be the last in the rules list
+     *
      * @return void
      */
     public function uniqueExcept($fields)

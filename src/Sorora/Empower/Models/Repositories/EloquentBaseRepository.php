@@ -30,6 +30,11 @@ abstract class EloquentBaseRepository {
         return $this->model->findOrFail($id);
     }
 
+    public function getFromField($field, $value)
+    {
+        return $this->model->getFromField($field, $value);
+    }
+
     public function orderBy($field, $order = null)
     {
         return $this->model->orderBy($field, $order);
