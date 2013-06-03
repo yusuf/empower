@@ -16,6 +16,6 @@ class PanelController extends EmpowerController {
     public function index()
     {
         $this->data['title'] = ucwords($this->data['baseurl']);
-        return \View::make('empower::index', $this->data);
+        return \View::make($this->viewFromConfig('empower', 'core', 'index'), $this->data);
     }
 }
