@@ -31,7 +31,7 @@ Once you have installed your choice of sorora packages via composer, you can eas
 
 If you do not run the *empower:deploy* command, you **should** publish the configuration to your main project, so future updates do not override your config.
 
-**Note:** You also need to add *'Sorora\Empower\Providers\EmpowerServiceProvider'* to your *app/config/config.php* file in the *providers* array
+**Note:** You also need to add *'Sorora\Empower\Providers\EmpowerServiceProvider'* to your *app/config/app.php* file in the *providers* array
 
 ----
 
