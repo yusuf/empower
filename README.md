@@ -15,7 +15,20 @@ You can install this package via composer by adding the below to your composer.j
 
     "sorora/empower" : "dev-master"
 
-Once you have installed the package (by running composer update or composer install), you **should** publish the configuration to your main project, so future updates do not override your config.
+### Deployment made easy
+
+Once you have installed your choice of sorora packages via composer, you can easily publish ALL of their configuration files and migrations with one simple command.
+
+    php artisan empower:deploy "list,of,packages,from,sorora"
+    // It also accepts an option of specifiying the Database Table prefix for migrated tables, you can do that like so:
+    php artisan empower:deploy "aurp,bms" --prefix=myprefix
+
+**Please note**: Empower is automatically added to the list of packages that will have their configuration and tables migrated!
+
+
+### Optional
+
+If you do not run the *empower:deploy* command, you **should** publish the configuration to your main project, so future updates do not override your config.
 
 **Note:** You also need to add *'Sorora\Empower\Providers\EmpowerServiceProvider'* to your *app/config/config.php* file in the *providers* array
 
