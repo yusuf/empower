@@ -9,6 +9,8 @@ This is needed for other packages made by Sorora to function fully, as it contai
 
 This package is **not recommended for standalone use** - it is used to store common features among all other packages I'm creating for Laravel 4.
 
+----
+
 ## Installation
 
 You can install this package via composer by adding the below to your composer.json file:
@@ -25,12 +27,13 @@ Once you have installed your choice of sorora packages via composer, you can eas
 
 **Please note**: Empower is automatically added to the list of packages that will have their configuration and tables migrated!
 
-
 ### Optional
 
 If you do not run the *empower:deploy* command, you **should** publish the configuration to your main project, so future updates do not override your config.
 
 **Note:** You also need to add *'Sorora\Empower\Providers\EmpowerServiceProvider'* to your *app/config/config.php* file in the *providers* array
+
+----
 
 ## Configuration Options
 
