@@ -59,6 +59,12 @@ class EmpowerDeploy extends Command {
 
 		if(! empty($packages))
 		{
+			// Add empower if it is not already there
+			if(!in_array('empower', $packages))
+			{
+				$packages[] = 'empower';
+			}
+			// go through each package and deploy configuration + migrate
 			foreach($packages AS $package)
 			{
 				$package = strtolower($package);
