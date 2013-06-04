@@ -17,8 +17,8 @@ class SupportModel extends \Eloquent {
 
         static::$dbprefix = \Config::get('empower::dbprefix');
         // Change any unique:table_name or exists:table_name to prefixed table names
-        static::$rules = str_replace(
-                            array('exists:', 'unique:'),
+        static::$rules = preg_replace(
+                            array('/exists:(?:'.static::$dbprefix.'|)/', '/unique:(?:'.static::$dbprefix.'|)/'),
                             array('exists:'.static::$dbprefix, 'unique:'.static::$dbprefix),
                             static::$rules
                         );
