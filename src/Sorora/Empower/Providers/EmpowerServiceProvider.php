@@ -45,6 +45,20 @@ class EmpowerServiceProvider extends ServiceProvider {
 		$this->app['config']->package('sorora/empower', __DIR__.'/../../../config');
 		// Register package view location
    		$this->app['view']->addNamespace('empower', __DIR__.'/../../../views');
+
+   		$this->registerCommands();
+	}
+
+	/**
+	 * Register the commands for this package
+	 */
+	protected function registerCommands()
+	{
+		$this->app['empower.deploy'] = $this->app->share(function($app) {
+			return new \Sorora\Empower\Commands\EmpowerDeploy;
+		});
+
+		$this->commands('empower.deploy');
 	}
 
 	/**
