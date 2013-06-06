@@ -22,7 +22,9 @@ You can install this package via composer by adding the below to your composer.j
 Once you have installed your choice of sorora packages via composer, you can easily publish ALL of their configuration files and migrations with one simple command.
 
     php artisan empower:deploy "list,of,packages,from,sorora"
-    // It also accepts an option of specifiying the Database Table prefix for migrated tables, you can do that like so:
+    
+It also accepts an option of specifiying the Database Table prefix for migrated tables, you can do that like so:
+
     php artisan empower:deploy "aurp,bms" --prefix=myprefix
 
 **Please note**: Empower is automatically added to the list of packages that will have their configuration and tables migrated!
