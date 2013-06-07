@@ -33,7 +33,7 @@ It also accepts an option of specifiying the Database Table prefix for migrated 
 
 If you do not run the `empower:deploy` command, you **should** publish the configuration to your main project, so future updates do not override your config.
 
-**Note:** You also need to add `'Sorora\Empower\Providers\EmpowerServiceProvider'` to your `app/config/app.php` file in the `providers` array
+>**Note:** You also need to add `'Sorora\Empower\Providers\EmpowerServiceProvider'` to your `app/config/app.php` file in the `providers` array
 
 ----
 
