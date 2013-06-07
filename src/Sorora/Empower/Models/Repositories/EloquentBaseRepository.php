@@ -35,6 +35,11 @@ abstract class EloquentBaseRepository {
         return $this->model->getFromField($field, $value);
     }
 
+    public function select($fields)
+    {
+        return $this->model->select($fields);
+    }
+
     public function orderBy($field, $order = null)
     {
         return $this->model->orderBy($field, $order);
