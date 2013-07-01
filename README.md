@@ -43,6 +43,10 @@ If you do not run the `empower:deploy` command, you **should** publish the confi
 
 The admin panel is by default located at the url of **yoursite.com/sorora**, you can change this by editing the config.php file for Empower and changing the value associated with `baseurl`
 
+### Default Admin User
+
+The default admin user email is "admin@admin.com" and the password is "password" (without the quotes)
+
 ### Database Table Prefixes
 
 All packages from Sorora that create tables will prepend them with the prefix specified in the `dbprefix` option found in Empower's `config.php` - by default this value is blank. To add a prefix to tables created by Sorora packages, simply put the value in this configuration option.
